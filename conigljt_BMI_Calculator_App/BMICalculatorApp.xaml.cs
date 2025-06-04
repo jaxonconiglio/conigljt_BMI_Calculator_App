@@ -69,7 +69,8 @@ public partial class BMICalculatorApp : ContentPage
 			{
                 status = "Normal weight";
                 recommendation = "-Maintain a balanced diet with proteins, healthy fats, and fiber. " +
-                    "-Stay physically active with at least 150 minutes of exercise per week. Keep regular check ups to monitor overall health.";
+                    "-Stay physically active with at least 150 minutes of exercise per week. " +
+					"-Keep regular check ups to monitor overall health.";
             }
 			else if (bmi < 30)
 			{
@@ -101,7 +102,8 @@ public partial class BMICalculatorApp : ContentPage
 			{
 				status = "Normal weight";
 				recommendation = "-Maintain a balanced diet with proteins, healthy fats, and fiber. " +
-					"-Stay physically active with at least 150 minutes of exercise per week. Keep regular check ups to monitor overall health.";
+					"-Stay physically active with at least 150 minutes of exercise per week. " +
+					"-Keep regular check ups to monitor overall health.";
 			}
 			else if (bmi < 30)
 			{
