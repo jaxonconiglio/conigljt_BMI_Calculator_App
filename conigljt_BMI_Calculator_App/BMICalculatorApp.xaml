@@ -5,58 +5,88 @@
              Title="BMICalculatorApp"
              BackgroundColor="White">
    
-    <VerticalStackLayout Padding="20" Spacing="25">
+    <Grid Padding="20" RowSpacing="15" ColumnSpacing="10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
         <Label Text="BMI Calculator"
                FontSize="28"
                HorizontalOptions="Center"
                TextColor="Black"
-               FontAttributes="Bold"/>
+               FontAttributes="Bold"
+               Grid.Row="0"/>
 
         <Label Text="Select Gender" 
                FontSize="20" 
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               Grid.Row="1"/>
 
-        <HorizontalStackLayout Spacing="30" HorizontalOptions="Center" >
-            <Frame x:Name="MaleFrame" BorderColor="Transparent" Padding="0" HasShadow="False">
+        <Grid Grid.Row="2" ColumnSpacing="30" >
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame x:Name="MaleFrame" BorderColor="Transparent" Padding="0" Grid.Column="0" HorizontalOptions="Center">
                 <Image Source="male.png" WidthRequest="100" HeightRequest="100">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnMaleTapped"/>
                     </Image.GestureRecognizers>
                 </Image>
             </Frame>
-            <Frame x:Name="FemaleFrame" BorderColor="Transparent" Padding="0" HasShadow="False">
+
+            <Frame x:Name="FemaleFrame" BorderColor="Transparent" Padding="0" Grid.Column="1" HorizontalOptions="Center">
                 <Image Source="female.png" WidthRequest="100" HeightRequest="100">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnFemaleTapped"/>
                     </Image.GestureRecognizers>
                 </Image>
             </Frame>
-        </HorizontalStackLayout>
+            
+        </Grid>
 
         <Label Text="Weight (lbs)" 
                FontSize="18"
-               TextColor="Black"/>
+               TextColor="Black"
+               Grid.Row="3"/>
         
         <Slider x:Name="WeightSlider" 
                 Minimum="0" 
                 Maximum="300" 
                 Value="90"
-                 ValueChanged="OnSliderValueChanged"
+                ValueChanged="OnSliderValueChanged"
                 HeightRequest="40"
                 MinimumTrackColor="Black"
                 MaximumTrackColor="LightGray"
-                Margin="0,0,0,10"/>
+                Margin="0,0,0,10"
+                Grid.Row="4"/>
         
         <Label x:Name="WeightLabel" 
                Text="90 lbs" 
                TextColor="Black"
                FontSize="16" 
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               Grid.Row="5"/>
 
         <Label Text="Height (inches)" 
                FontSize="18"
-               TextColor="Black"/>
+               TextColor="Black"
+               Grid.Row="6"/>
         
         <Slider x:Name="HeightSlider" 
                 Minimum="0" 
@@ -66,34 +96,40 @@
                 HeightRequest="40"
                 MinimumTrackColor="Black"
                 MaximumTrackColor="LightGray"
-                Margin="0,0,0,10"/>
+                Margin="0,0,0,10"
+                Grid.Row="7"/>
         
         <Label x:Name="HeightLabel" 
                Text="50 in" 
                TextColor="Black"
                FontSize="16" 
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               Grid.Row="8"/>
 
         <Button Text="Calculate BMI" 
                 Clicked="OnCalculateClicked"
                 BackgroundColor="LightGrey"
-                TextColor="Black"/>
+                TextColor="Black"
+                Grid.Row="9"/>
 
         <Label x:Name="BMIResultLabel" 
                FontSize="18" 
                TextColor="Black" 
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               Grid.Row="10"/>
         
         <Label x:Name="HealthStatusLabel" 
                FontSize="18" 
                TextColor="DarkGreen" 
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               Grid.Row="11"/>
         
         <Label x:Name="RecommendationLabel" 
                FontSize="16" 
                HorizontalTextAlignment="Center" 
-               TextColor="DarkSlateBlue"/>
+               TextColor="DarkSlateBlue"
+               Grid.Row="12"/>
 
-    </VerticalStackLayout>
+    </Grid>
     
 </ContentPage>
